@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "IBM Plex Sans", sans-serif !important;
+  font-weight: 400;
+}
+
+input,
+textarea,
+label,
+button {
+  font-family: inherit;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.sticky-header.is-sticky {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+}
+
+.btn-gray {
+  background-color: #edeef0 !important;
+}
+
+.search-field {
+  border: none;
+  background-color: #f2f2f2;
+  border-radius: 21px;
+  width: 100%;
+  padding: 10px 20px 10px 50px;
+  outline: none;
+}
+
+.search-field::placeholder {
+  color: #5c5c5c;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.location-field {
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+
+.location-icon {
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+
+.login-btn {
+  border: none;
+  background-color: transparent;
+  color: #2e2e2e;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login-btn span {
+  color: #2f6ce5;
+  font-weight: 700;
+}
+
+.breadcrumb-bg {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("/public/img/breadcrumb.svg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  align-items: end;
+}
+
+.breadcrumb-text {
+  margin-bottom: 80px;
+}
+
+.breadcrumb-text p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.breadcrumb-headline {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.post-category {
+  color: #8a8a8a;
+  font-size: 16px;
+}
+
+.post-category .active {
+  color: #000000;
+}
+
+.post-text {
+  color: #5c5c5c;
+  font-size: 19px;
+}
+
+.view-text {
+  color: #525252;
+}
+
+.share-icon {
+  fill: #2d2d2d;
+}
+
+.link-btn {
+  border-radius: 8px;
+  border: 0.7px solid #a9aeb8;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.252px;
+  padding: 10px 0;
+}
+
+.color-orange {
+  color: #e56135;
+}
+
+.color-green {
+  color: #02b875;
+}
+
+.modal-custom-header {
+  border-radius: 8px 8px 0px 0px;
+  background: #effff4;
+  color: #008a45;
+}

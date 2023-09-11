@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "categoty": "✍️ Article",
+    "cat-id": 1,
+    "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
+    "text": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+    "thumb": "post-1.png",
+    "author": "Sarthak Kamra",
+    "authorImg": "author-1.png",
+    "view": "1.4k views"
+  },
+  {
+    "id": 2,
+    "categoty": "🔬️ Education",
+    "cat-id": 3,
+    "title": "Tax Benefits for Investment under National Pension Scheme launched by Government",
+    "text": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+    "thumb": "post-2.png",
+    "author": "Sarah West",
+    "authorImg": "author-2.png",
+    "view": "1.4k views"
+  },
+  {
+    "id": 3,
+    "categoty": "🗓️ Meetup",
+    "cat-id": 2,
+    "title": "Finance & Investment Elite Social Mixer @Lujiazui",
+    "text": "",
+    "thumb": "post-3.png",
+    "author": "Ronal Jones",
+    "authorImg": "author-3.png",
+    "view": "1.4k views",
+    "date": "Fri, 12 Oct, 2018",
+    "location": "Ahmedabad, India",
+    "website": "http://example.com"
+  },
+  {
+    "id": 4,
+    "categoty": "💼️ Job",
+    "cat-id": 4,
+    "title": "Software Developer",
+    "text": "",
+    "thumb": "",
+    "author": "Ronal Jones",
+    "authorImg": "author-4.png",
+    "view": "1.4k views",
+    "company": "Innovaccer Analytics Private Ltd.",
+    "location": "Noida, India",
+    "apply": "http://example.com"
+  }
+]
