@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Logo from './../../public/img/whole.svg'
 import { FaSearch } from "react-icons/fa";
 import { useEffect, useState } from "react";
-import 'reactjs-popup/dist/index.css';
 import LoginModal from "./LoginModal";
 import CreateAccountModal from "./CreateAccountModal";
 

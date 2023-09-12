@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Col, Container, Modal, Row } from "react-bootstrap";
-import { FaFacebookSquare, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import LoginImg from "./../../public/login.svg";
 import { useState } from "react";
+import SocialAccount from "./SocialAccount";
 
 const CreateAccountModal = ({ show, onHide }) => {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -52,16 +53,7 @@ const CreateAccountModal = ({ show, onHide }) => {
                                         <button type="button" className="btn btn-primary w-100 rounded-pill">Create Account</button>
                                     </div>
                                 </form>
-                                <div className="mt-4">
-                                    <button className="w-100 social-login-btn mb-3">
-                                        <FaFacebookSquare className="me-2" />
-                                        Sign up with Facebook
-                                    </button>
-                                    <button className="w-100 social-login-btn">
-                                        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo" />
-                                        <span className="ms-2">Sign up with Facebook</span>
-                                    </button>
-                                </div>
+                                <SocialAccount />
                             </Col>
                             <Col lg="6" className="position-relative">
                                 <p className="mb-4 text-end mb-5">Already have an account? Sign In</p>
