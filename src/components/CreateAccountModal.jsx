@@ -115,7 +115,7 @@ const CreateAccountModal = ({ show, onHide, onShowCreateAccountModal }) => {
                                         <button type="submit" className="btn btn-primary w-100 rounded-pill">Create Account</button>
                                     </div>
                                 </form>
-                                <SocialAccount />
+                                <SocialAccount onModalOff={onShowCreateAccountModal} />
                             </Col>
                             <Col lg="6" className="position-relative">
                                 <p className="mb-4 text-end mb-5">Already have an account? Sign In</p>

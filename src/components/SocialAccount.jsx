@@ -4,7 +4,7 @@ import { FaFacebookSquare } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../contexts/AuthProvider';
 
-const SocialAccount = () => {
+const SocialAccount = ({ onModalOff }) => {
 
     const { googleSignIn } = useContext(AuthContext);
 
@@ -14,6 +14,7 @@ const SocialAccount = () => {
                 // eslint-disable-next-line no-unused-vars
                 const user = result.user;
                 Swal.fire("Successfully!", "User Signin Successfully", "success");
+                onModalOff(false);
             })
             .catch((error) => {
                 const errorCode = error.code;

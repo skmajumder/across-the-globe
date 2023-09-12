@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Leisure",
+    "image": "group-1.png"
+  },
+  {
+    "id": 2,
+    "name": "Activism",
+    "image": "group-2.png"
+  },
+  {
+    "id": 3,
+    "name": "MBA",
+    "image": "group-3.png"
+  },
+  {
+    "id": 4,
+    "name": "Philosophy",
+    "image": "group-4.png"
+  }
+]

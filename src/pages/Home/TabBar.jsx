@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { FaCaretDown, FaUserPlus } from "react-icons/fa";
+import { AuthContext } from '../../contexts/AuthProvider';
+import { BiExit } from "react-icons/bi";
 
 const TabBar = ({ categories }) => {
+    const { user } = useContext(AuthContext);
 
     return (
         <section className="tab-bar">
@@ -20,10 +24,15 @@ const TabBar = ({ categories }) => {
                             <span>Write a Post</span>
                             <FaCaretDown />
                         </button>
-                        <button type="button" className="btn btn-primary ms-3 d-flex align-items-center gap-2">
-                            <FaUserPlus />
-                            <span>Join Group</span>
-                        </button>
+                        {
+                            user ? <button type="button" className="btn border ms-3 d-flex align-items-center gap-2">
+                                <BiExit />
+                                <span>Leave Group</span>
+                            </button> : <button type="button" className="btn btn-primary ms-3 d-flex align-items-center gap-2">
+                                <FaUserPlus />
+                                <span>Join Group</span>
+                            </button>
+                        }
                     </div>
                 </div>
                 <hr />

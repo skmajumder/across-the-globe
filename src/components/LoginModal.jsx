@@ -80,7 +80,7 @@ const LoginModal = ({ show, onHide, onShowLoginModal }) => {
                                         <button type="submit" className="btn btn-primary w-100 rounded-pill">Sign In</button>
                                     </div>
                                 </form>
-                                <SocialAccount />
+                                <SocialAccount onModalOff={onShowLoginModal} />
                             </Col>
                             <Col lg="6" className="position-relative">
                                 <p className="mb-4 text-end mb-5">Don’t have an account yet? Create new for free!</p>
