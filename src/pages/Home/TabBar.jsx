@@ -9,7 +9,7 @@ const TabBar = ({ categories }) => {
 
     return (
         <section className="tab-bar">
-            <div className="container">
+            <div className="container d-none d-md-block">
                 <div className="row">
                     <div className="col-lg-8">
                         <ul className="d-flex list-unstyled post-category gap-4">
@@ -36,6 +36,21 @@ const TabBar = ({ categories }) => {
                     </div>
                 </div>
                 <hr />
+            </div>
+            <div className="container d-sm-block d-md-none mb-4">
+                <div className="d-flex justify-content-between align-items-center gap-3">
+                    <h5>Posts(368)</h5>
+                    <div className="dropdown">
+                        <button className="dropdown-toggle filter-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Filter: All
+                        </button>
+                        <ul className="dropdown-menu">
+                            {
+                                categories.map(category => <li key={category.id}><a className="dropdown-item" href="#">{category.name}</a></li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
     );

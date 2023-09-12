@@ -19,7 +19,7 @@ const Sidebar = () => {
 
     return (
         <>
-            <aside className="mt-3">
+            <aside className="mt-3 d-none d-md-block">
                 <form className="search-form position-relative">
                     <FaMapMarkerAlt className="location-icon" />
                     <input type="search" aria-label="Search" placeholder="Enter your location" aria-describedby="search-icon" className="location-field" />

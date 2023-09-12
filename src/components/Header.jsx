@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from './../../public/img/whole.svg'
-import { FaSearch } from "react-icons/fa";
+import { FaCircle, FaSearch, FaSquareFull } from "react-icons/fa";
+import { BiSolidDownArrow } from "react-icons/bi";
 import { useContext, useEffect, useState } from "react";
 import LoginModal from "./LoginModal";
 import CreateAccountModal from "./CreateAccountModal";
@@ -48,7 +49,7 @@ const Header = () => {
     return (
         <>
             <header className={`header py-3 ${isSticky ? "sticky-header" : ""}`}>
-                <div className="container">
+                <div className="container d-none d-md-block">
                     <div className="row align-items-center">
                         <div className="col-lg-4">
                             <Link to={'/'}>
@@ -102,6 +103,13 @@ const Header = () => {
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="container d-sm-block d-md-none">
+                    <div className="d-flex justify-content-end align-items-center gap-3">
+                        <FaSquareFull className="mobile-nav-icon" />
+                        <FaCircle className="mobile-nav-icon" />
+                        <BiSolidDownArrow className="fs-3 mobile-nav-icon" />
                     </div>
                 </div>
             </header>
