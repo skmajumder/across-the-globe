@@ -68,12 +68,12 @@ const Header = () => {
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <a className="dropdown-item" href="#" onClick={handleLoginModalShow}>
+                                        <a className="dropdown-item" onClick={handleLoginModalShow}>
                                             Sign In
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="dropdown-item" href="#" onClick={handleCreateAccountModalShow}>
+                                        <a className="dropdown-item" onClick={handleCreateAccountModalShow}>
                                             Create Account
                                         </a>
                                     </li>

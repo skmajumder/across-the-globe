@@ -152,3 +152,38 @@ button {
   background: #effff4;
   color: #008a45;
 }
+
+.signup-field {
+  border: 1px solid #d9d9db;
+  background: #f7f8fa;
+  padding: 15px 20px;
+}
+
+.social-login-btn {
+  border-radius: 2px;
+  border: 1px solid #d9d9db;
+  background: #fff;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.social-login-btn img {
+  width: 15px;
+}
+
+.terms-and-conditions {
+  color: #000;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.088px;
+  opacity: 0.6;
+  position: absolute;
+  bottom: 20px;
+}
+
+.password-toggle-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  right: 20px;
+}
