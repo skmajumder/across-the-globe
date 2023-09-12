@@ -2,15 +2,77 @@
 import { Col, Container, Modal, Row } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import LoginImg from "./../../public/login.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SocialAccount from "./SocialAccount";
+import { AuthContext } from "../contexts/AuthProvider";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
-const CreateAccountModal = ({ show, onHide }) => {
+const CreateAccountModal = ({ show, onHide, onShowCreateAccountModal }) => {
+
+    const { signUp, logout } = useContext(AuthContext);
+
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+
     const [passwordVisible, setPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };
+
+    // * Update the user Name & Set user Photo
+    const updateUserInformation = (user, name) => {
+        updateProfile(user, {
+            displayName: name,
+        })
+            .then(() => { })
+            .catch((error) => {
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... Something went wrong!',
+                    text: `${errorMessage}`,
+                });
+            });
+    };
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!firstName || !lastName || !email || !password || !confirmPassword) return;
+        if (password !== confirmPassword) return;
+
+        signUp(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                const name = `${firstName} ${lastName}`
+                updateUserInformation(user, name)
+                Swal.fire(
+                    'Good Job!',
+                    'User Create successfully. Now Please Login',
+                    'success'
+                )
+                setFirstName('')
+                setLastName('');
+                setEmail('')
+                setPassword('')
+                setConfirmPassword('');
+                logout();
+                onShowCreateAccountModal(false);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops... Something went wrong!',
+                    text: `${errorCode} ${errorMessage}`,
+                });
+            });
+    }
 
     return (
         <>
@@ -23,17 +85,17 @@ const CreateAccountModal = ({ show, onHide }) => {
                         <Row>
                             <Col lg="6">
                                 <h2 className="fw-bold mb-4">Create Account</h2>
-                                <form className="signup-form">
+                                <form className="signup-form" onSubmit={handleSubmit}>
                                     <div className="d-flex">
-                                        <input type="text" name="first-name" className="w-50 signup-field" placeholder="First Name" />
-                                        <input type="text" name="last-name" className="w-50 signup-field" placeholder="Last Name" />
+                                        <input type="text" name="first-name" className="w-50 signup-field" placeholder="First Name" required value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+
+                                        <input type="text" name="last-name" className="w-50 signup-field" placeholder="Last Name" required value={lastName} onChange={(e) => setLastName(e.target.value)} />
                                     </div>
                                     <div>
-                                        <input type="email" name="email" className="w-100 signup-field" placeholder="Email" />
+                                        <input type="email" name="email" className="w-100 signup-field" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                                     </div>
                                     <div className="position-relative">
-                                        <input type={passwordVisible ? "text" : "password"} name="password" className="w-100 signup-field" placeholder="Password" />
-                                        {/* Show/hide password icon */}
+                                        <input type={passwordVisible ? "text" : "password"} minLength={6} name="password" className="w-100 signup-field" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
                                         {passwordVisible ? (
                                             <FaEyeSlash
                                                 className="password-toggle-icon"
@@ -47,10 +109,10 @@ const CreateAccountModal = ({ show, onHide }) => {
                                         )}
                                     </div>
                                     <div>
-                                        <input type="password" name="confirm-password" className="w-100 signup-field" placeholder="Confirm Password" />
+                                        <input type="password" name="confirm-password" className="w-100 signup-field" placeholder="Confirm Password" required value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                                     </div>
                                     <div className="mt-4">
-                                        <button type="button" className="btn btn-primary w-100 rounded-pill">Create Account</button>
+                                        <button type="submit" className="btn btn-primary w-100 rounded-pill">Create Account</button>
                                     </div>
                                 </form>
                                 <SocialAccount />
